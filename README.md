@@ -54,7 +54,7 @@ The recursive part can be written below:
 
 ![frac e4](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_e4.svg)
 
-The fixed points are as follows:
+The fixed points at n = 1 are:
 
 ![frac x2](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_x2.svg)
 
