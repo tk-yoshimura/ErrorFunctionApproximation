@@ -14,11 +14,11 @@ The complementary error function is defined by the following equation:
 
 To obtain these numerical solutions, use the following equations:
 
-Taylor series (|z| \le 2.5):
+Taylor series (|z| &le; 2.5):
 
 ![taylor series](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/taylor_series.svg)
 
-Continued fraction expansion: (|z| \geq 2.5):
+Continued fraction expansion: (|z| &geq; 2.5):
 
 ![continued fraction expansion](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand.svg)
 
@@ -64,6 +64,4 @@ These approximate the true values:
 
 ![frac x](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_x.svg)
 
-![frac x value](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_x_value.svg)
-
-![frac x error](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_error.svg)
+![frac x value](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_x_value.svg)![frac x error](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/fracexpand_error.svg)
