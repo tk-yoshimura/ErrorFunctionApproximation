@@ -14,7 +14,7 @@ The complementary error function is defined by the following equation:
 
 To obtain these numerical solutions, use the following equations:
 
-Taylor series (|z| &le; 2.5):
+Taylor series (|z| &lt; 2.5):
 
 ![taylor series](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/taylor_series.svg)
 
