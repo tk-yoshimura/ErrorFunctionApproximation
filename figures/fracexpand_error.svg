@@ -8,12 +8,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="536.8609pt"
-   height="376.74063pt"
-   viewBox="0 0 536.8609 376.74063"
+   width="273.43045pt"
+   height="193.37032pt"
+   viewBox="0 0 273.43045 193.37031"
    version="1.1"
    id="svg650"
-   sodipodi:docname="Xerror.svg"
+   sodipodi:docname="fracexpand_error.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata654">
@@ -45,8 +45,8 @@
      fit-margin-right="5"
      fit-margin-bottom="5"
      inkscape:zoom="0.65186406"
-     inkscape:cx="84.507943"
-     inkscape:cy="363.84607"
+     inkscape:cx="-371.84574"
+     inkscape:cy="241.59918"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -269,7 +269,7 @@
   </defs>
   <g
      id="surface479"
-     transform="translate(-49.427345,-6.1093749)">
+     transform="matrix(0.5,0,0,0.5,-22.213673,-0.55468739)">
     <path
        style="fill:none;stroke:#000000;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:8, 80;stroke-opacity:1"
        d="M 3000,6660 V 320"
