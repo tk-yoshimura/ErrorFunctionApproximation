@@ -1,0 +1,13 @@
+﻿/.vs
+/dll
+/packages
+/**/bin
+/**/obj
+/**/*.png
+/**/*.jpg
+/**/*.bak
+/**/*.user
+/results_disused
+/TestResults
+/**/__pycache__
+/**/PublishProfiles
