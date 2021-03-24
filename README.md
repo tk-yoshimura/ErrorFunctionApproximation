@@ -40,6 +40,13 @@ The ratio to the next term is less than 1:
 
 ![Taylor scale value](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/taylor_scale_value.svg)
 
+The number of terms required to obtain arbitrary precision is as follows:  
+In addition, in order to obtain the expected value, 128-bit expansion was performed to absorb the censoring error.
+
+![erf convergence zwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_convergence_zwise.svg)
+
+![erf convergence bitwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_convergence_bitswise.svg)
+
 ## Continued fraction expansion
 
 Next, in Continued fraction expansion, when the absolute value of z is small, the convergence becomes slow.
