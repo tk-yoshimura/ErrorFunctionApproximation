@@ -41,7 +41,7 @@ The ratio to the next term is less than 1:
 ![Taylor scale value](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/taylor_scale_value.svg)
 
 The number of terms required to obtain arbitrary precision is as follows:  
-In addition, in order to obtain the expected value, 128-bit expansion was performed to absorb the censoring error.
+In addition, in order to obtain the expected value, 128-bit expansion was performed to absorb cancellation.
 
 ![erf convergence zwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_convergence_zwise.svg)
 
