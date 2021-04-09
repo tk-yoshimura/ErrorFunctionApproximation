@@ -1,11 +1,6 @@
 ﻿using MultiPrecision;
 
 namespace ErrorFunctionApproximation {
-
-    internal struct Plus4<N> : IConstant where N : struct, IConstant {
-        public int Value => checked(default(N).Value + 4);
-    }
-
     static class ErfcContinuedFraction<N> where N : struct, IConstant {
 
         public static MultiPrecision<N> Erfc(MultiPrecision<N> z, long frac_n) {

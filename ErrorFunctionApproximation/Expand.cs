@@ -1,6 +1,10 @@
 ﻿using MultiPrecision;
 
-namespace ErrorFunctionApproximation {
+namespace ErrorFunctionApproximation {    
+    internal struct Plus4<N> : IConstant where N : struct, IConstant {
+        public int Value => checked(default(N).Value + 4);
+    }
+
     internal struct Expand25<N> : IConstant where N : struct, IConstant {
         public int Value => checked(default(N).Value * 5 / 4);
     }
