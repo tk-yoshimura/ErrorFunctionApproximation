@@ -85,9 +85,11 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 The following is used to approximate the error of machine epsilon in the entire domain.
 
 near zero:
+
 ![erf approx nearzero](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_approx_nz.svg)
 
 1 to 4:
+
 ![erfc approx az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az.svg)
 
 ![erfc az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_az.svg)
@@ -99,10 +101,13 @@ near zero:
 ![erfc az 34](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_34.svg)
 
 4 to 27.25:
+
 ![erfc x20](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_x20.svg)
 
 larger 27.25:
+
 ![erfc tolarge](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_tolarge.svg)
 
 code:
+
 [erf approx](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunction.cs)
