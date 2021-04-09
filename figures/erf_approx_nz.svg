@@ -14,11 +14,11 @@
    version="1.1"
    viewBox="56.7328 56.06 672.87088 116.00669"
    width="672.87091pt"
-   id="svg243"
+   id="svg244"
    sodipodi:docname="erf_approx_nz.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
-     id="metadata247">
+     id="metadata248">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -40,7 +40,7 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview245"
+     id="namedview246"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -52,9 +52,9 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg243" />
+     inkscape:current-layer="svg244" />
   <defs
-     id="defs38">
+     id="defs39">
     <path
        d="m 6.56538,-2.29141 c 0.16936,0 0.34869,0 0.34869,-0.19925 0,-0.19925 -0.17933,-0.19925 -0.34869,-0.19925 H 1.17559 c -0.16936,0 -0.348691,0 -0.348691,0.19925 0,0.19925 0.179331,0.19925 0.348691,0.19925 z"
        id="g0-0"
@@ -86,6 +86,10 @@
     <path
        d="M 3.52179,-1.26924 H 3.28468 C 3.26376,-1.11582 3.19402,-0.704359 3.10336,-0.63462 3.04757,-0.592777 2.51059,-0.592777 2.41295,-0.592777 H 1.12976 C 1.86202,-1.24134 2.1061,-1.43661 2.52453,-1.76438 3.0406,-2.17584 3.52179,-2.60822 3.52179,-3.27073 c 0,-0.84384 -0.73922,-1.35991 -1.63188,-1.35991 -0.86475,0 -1.450558,0.60673 -1.450558,1.24832 0,0.35567 0.299876,0.39054 0.369614,0.39054 0.167373,0 0.369614,-0.11856 0.369614,-0.36961 0,-0.12553 -0.04882,-0.36962 -0.411457,-0.36962 0.21619,-0.49514 0.690407,-0.64857 1.018187,-0.64857 0.69738,0 1.06002,0.54396 1.06002,1.10885 0,0.60672 -0.43238,1.08792 -0.65554,1.33897 L 0.509091,-0.27198 C 0.439352,-0.209215 0.439352,-0.195268 0.439352,0 H 3.31258 Z"
        id="g4-50"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 1.90386,-2.32927 c 0.54396,0 0.9345,0.37659 0.9345,1.12279 0,0.864761 -0.50212,1.1227938 -0.9066,1.1227938 -0.27896,0 -0.89266,-0.0767128 -1.185558,-0.4881698 0.327768,-0.013947 0.404478,-0.244084 0.404478,-0.390535 0,-0.223159 -0.167367,-0.383559 -0.383557,-0.383559 -0.195267,0 -0.390535,0.11855 -0.390535,0.404481 0,0.655541 0.725282,1.080946 1.569112,1.080946 0.96937,0 1.63886,-0.648568 1.63886,-1.345957 0,-0.54396 -0.44633,-1.08792 -1.21345,-1.24831 0.73225,-0.26501 0.99726,-0.78805 0.99726,-1.21345 0,-0.55094 -0.63462,-0.9624 -1.40872,-0.9624 -0.7741,0 -1.366873,0.37659 -1.366873,0.9345 0,0.23711 0.153425,0.36961 0.36264,0.36961 0.216193,0 0.355663,-0.16039 0.355663,-0.35566 0,-0.20224 -0.13947,-0.34869 -0.355663,-0.36264 C 1.1995,-4.35168 1.6807,-4.42839 1.93873,-4.42839 c 0.31382,0 0.75318,0.15342 0.75318,0.76015 0,0.2929 -0.09764,0.61369 -0.27896,0.82988 -0.23014,0.26501 -0.4254,0.27896 -0.7741,0.29988 -0.17434,0.01395 -0.18829,0.01395 -0.22316,0.02092 -0.01395,0 -0.06974,0.01395 -0.06974,0.09066 0,0.09763 0.06277,0.09763 0.18132,0.09763 z"
+       id="g4-51"
        inkscape:connector-curvature="0" />
     <path
        d="m 3.68917,-1.14371 v -0.25106 h -0.7741 v -3.11034 c 0,-0.14645 0,-0.19526 -0.15343,-0.19526 -0.08368,0 -0.11158,0 -0.18132,0.09763 l -2.30834,3.20797 v 0.25106 h 2.05031 v 0.571854 c 0,0.237111 0,0.320797 -0.56488,0.320797 H 1.56912 V 0 c 0.34869,-0.0139477 0.79501,-0.0278954 1.04607,-0.0278954 0.25804,0 0.70436,0.0139477 1.05305,0.0278954 V -0.251059 H 3.47995 c -0.56488,0 -0.56488,-0.083686 -0.56488,-0.320797 V -1.14371 Z M 2.37111,-3.9472 v 2.55243 H 0.530012 Z"
@@ -207,63 +211,63 @@
        x="56.7328"
        xlink:href="#g3-101"
        y="72.990898"
-       id="use40"
+       id="use41"
        width="100%"
        height="100%" />
     <use
        x="61.1441"
        xlink:href="#g3-114"
        y="72.990898"
-       id="use42"
+       id="use43"
        width="100%"
        height="100%" />
     <use
        x="65.031601"
        xlink:href="#g3-102"
        y="72.990898"
-       id="use44"
+       id="use45"
        width="100%"
        height="100%" />
     <use
        x="68.881699"
        xlink:href="#g3-40"
        y="72.990898"
-       id="use46"
+       id="use47"
        width="100%"
        height="100%" />
     <use
        x="72.7416"
        xlink:href="#g1-122"
        y="72.990898"
-       id="use48"
+       id="use49"
        width="100%"
        height="100%" />
     <use
        x="77.795601"
        xlink:href="#g3-41"
        y="72.990898"
-       id="use50"
+       id="use51"
        width="100%"
        height="100%" />
     <use
        x="84.469101"
        xlink:href="#g0-25"
        y="72.990898"
-       id="use52"
+       id="use53"
        width="100%"
        height="100%" />
     <use
        x="98.3237"
        xlink:href="#g3-50"
        y="66.251099"
-       id="use54"
+       id="use55"
        width="100%"
        height="100%" />
     <use
        x="103.286"
        xlink:href="#g1-122"
        y="66.251099"
-       id="use56"
+       id="use57"
        width="100%"
        height="100%" />
     <rect
@@ -271,12 +275,12 @@
        width="14.3386"
        x="96.180603"
        y="70.300903"
-       id="rect58" />
+       id="rect59" />
     <use
        x="96.180603"
        xlink:href="#g0-112"
        y="72.691902"
-       id="use60"
+       id="use61"
        width="100%"
        height="100%" />
     <rect
@@ -284,110 +288,110 @@
        width="6.0364099"
        x="104.483"
        y="72.293404"
-       id="rect62" />
+       id="rect63" />
     <use
        x="104.483"
        xlink:href="#g1-25"
        y="79.867699"
-       id="use64"
+       id="use65"
        width="100%"
        height="100%" />
     <use
        x="116.91"
        xlink:href="#g4-49"
        y="60.537498"
-       id="use66"
+       id="use67"
        width="100%"
        height="100%" />
     <use
        x="120.866"
        xlink:href="#g4-54"
        y="60.537498"
-       id="use68"
+       id="use69"
        width="100%"
        height="100%" />
     <use
        x="113.686"
        xlink:href="#g5-88"
        y="63.526299"
-       id="use70"
+       id="use71"
        width="100%"
        height="100%" />
     <use
        x="113.375"
        xlink:href="#g2-110"
        y="84.625099"
-       id="use72"
+       id="use73"
        width="100%"
        height="100%" />
     <use
        x="118.282"
        xlink:href="#g4-61"
        y="84.625099"
-       id="use74"
+       id="use75"
        width="100%"
        height="100%" />
     <use
        x="124.375"
        xlink:href="#g4-48"
        y="84.625099"
-       id="use76"
+       id="use77"
        width="100%"
        height="100%" />
     <use
        x="133.367"
        xlink:href="#g3-40"
        y="66.251099"
-       id="use78"
+       id="use79"
        width="100%"
        height="100%" />
     <use
        x="137.22701"
        xlink:href="#g0-0"
        y="66.251099"
-       id="use80"
+       id="use81"
        width="100%"
        height="100%" />
     <use
        x="144.94701"
        xlink:href="#g3-49"
        y="66.251099"
-       id="use82"
+       id="use83"
        width="100%"
        height="100%" />
     <use
        x="149.91"
        xlink:href="#g3-41"
        y="66.251099"
-       id="use84"
+       id="use85"
        width="100%"
        height="100%" />
     <use
        x="153.769"
        xlink:href="#g2-110"
        y="62.6357"
-       id="use86"
+       id="use87"
        width="100%"
        height="100%" />
     <use
        x="159.192"
        xlink:href="#g1-122"
        y="66.251099"
-       id="use88"
+       id="use89"
        width="100%"
        height="100%" />
     <use
        x="164.246"
        xlink:href="#g4-50"
        y="62.6357"
-       id="use90"
+       id="use91"
        width="100%"
        height="100%" />
     <use
        x="168.203"
        xlink:href="#g2-110"
        y="62.6357"
-       id="use92"
+       id="use93"
        width="100%"
        height="100%" />
     <rect
@@ -395,82 +399,82 @@
        width="44.615101"
        x="131.243"
        y="70.300903"
-       id="rect94" />
+       id="rect95" />
     <use
        x="131.243"
        xlink:href="#g1-110"
        y="79.824699"
-       id="use96"
+       id="use97"
        width="100%"
        height="100%" />
     <use
        x="137.201"
        xlink:href="#g3-33"
        y="79.824699"
-       id="use98"
+       id="use99"
        width="100%"
        height="100%" />
     <use
        x="139.95799"
        xlink:href="#g3-40"
        y="79.824699"
-       id="use100"
+       id="use101"
        width="100%"
        height="100%" />
     <use
        x="143.81799"
        xlink:href="#g3-50"
        y="79.824699"
-       id="use102"
+       id="use103"
        width="100%"
        height="100%" />
     <use
        x="148.78"
        xlink:href="#g1-110"
        y="79.824699"
-       id="use104"
+       id="use105"
        width="100%"
        height="100%" />
     <use
        x="156.952"
        xlink:href="#g3-43"
        y="79.824699"
-       id="use106"
+       id="use107"
        width="100%"
        height="100%" />
     <use
        x="166.886"
        xlink:href="#g3-49"
        y="79.824699"
-       id="use108"
+       id="use109"
        width="100%"
        height="100%" />
     <use
        x="171.84801"
        xlink:href="#g3-41"
        y="79.824699"
-       id="use110"
+       id="use111"
        width="100%"
        height="100%" />
     <use
        x="84.469101"
        xlink:href="#g3-61"
        y="104.456"
-       id="use112"
+       id="use113"
        width="100%"
        height="100%" />
     <use
        x="98.3237"
        xlink:href="#g3-50"
        y="97.716003"
-       id="use114"
+       id="use115"
        width="100%"
        height="100%" />
     <use
        x="103.286"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use116"
+       id="use117"
        width="100%"
        height="100%" />
     <rect
@@ -478,12 +482,12 @@
        width="14.3386"
        x="96.180603"
        y="101.766"
-       id="rect118" />
+       id="rect119" />
     <use
        x="96.180603"
        xlink:href="#g0-112"
        y="104.157"
-       id="use120"
+       id="use121"
        width="100%"
        height="100%" />
     <rect
@@ -491,47 +495,47 @@
        width="6.0364099"
        x="104.483"
        y="103.758"
-       id="rect122" />
+       id="rect123" />
     <use
        x="104.483"
        xlink:href="#g1-25"
        y="111.333"
-       id="use124"
+       id="use125"
        width="100%"
        height="100%" />
     <use
        x="113.375"
        xlink:href="#g5-18"
        y="90.408302"
-       id="use126"
+       id="use127"
        width="100%"
        height="100%" />
     <use
        x="120.709"
        xlink:href="#g3-49"
        y="104.456"
-       id="use128"
+       id="use129"
        width="100%"
        height="100%" />
     <use
        x="127.885"
        xlink:href="#g0-0"
        y="104.456"
-       id="use130"
+       id="use131"
        width="100%"
        height="100%" />
     <use
        x="139.015"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use132"
+       id="use133"
        width="100%"
        height="100%" />
     <use
        x="144.069"
        xlink:href="#g4-50"
        y="94.100601"
-       id="use134"
+       id="use135"
        width="100%"
        height="100%" />
     <rect
@@ -539,33 +543,33 @@
        width="9.5406504"
        x="139.015"
        y="101.766"
-       id="rect136" />
+       id="rect137" />
     <use
        x="141.29401"
        xlink:href="#g3-51"
        y="111.29"
-       id="use138"
+       id="use139"
        width="100%"
        height="100%" />
     <use
        x="151.965"
        xlink:href="#g3-43"
        y="104.456"
-       id="use140"
+       id="use141"
        width="100%"
        height="100%" />
     <use
        x="163.30499"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use142"
+       id="use143"
        width="100%"
        height="100%" />
     <use
        x="168.35899"
        xlink:href="#g4-52"
        y="94.100601"
-       id="use144"
+       id="use145"
        width="100%"
        height="100%" />
     <rect
@@ -573,40 +577,40 @@
        width="9.9626703"
        x="163.09399"
        y="101.766"
-       id="rect146" />
+       id="rect147" />
     <use
        x="163.09399"
        xlink:href="#g3-49"
        y="111.29"
-       id="use148"
+       id="use149"
        width="100%"
        height="100%" />
     <use
        x="168.05701"
        xlink:href="#g3-48"
        y="111.29"
-       id="use150"
+       id="use151"
        width="100%"
        height="100%" />
     <use
        x="176.466"
        xlink:href="#g0-0"
        y="104.456"
-       id="use152"
+       id="use153"
        width="100%"
        height="100%" />
     <use
        x="187.806"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use154"
+       id="use155"
        width="100%"
        height="100%" />
     <use
        x="192.86"
        xlink:href="#g4-54"
        y="94.100601"
-       id="use156"
+       id="use157"
        width="100%"
        height="100%" />
     <rect
@@ -614,40 +618,40 @@
        width="9.9626703"
        x="187.595"
        y="101.766"
-       id="rect158" />
+       id="rect159" />
     <use
        x="187.595"
        xlink:href="#g3-52"
        y="111.29"
-       id="use160"
+       id="use161"
        width="100%"
        height="100%" />
     <use
        x="192.558"
        xlink:href="#g3-50"
        y="111.29"
-       id="use162"
+       id="use163"
        width="100%"
        height="100%" />
     <use
        x="200.967"
        xlink:href="#g3-43"
        y="104.456"
-       id="use164"
+       id="use165"
        width="100%"
        height="100%" />
     <use
        x="214.798"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use166"
+       id="use167"
        width="100%"
        height="100%" />
     <use
        x="219.85201"
        xlink:href="#g4-56"
        y="94.100601"
-       id="use168"
+       id="use169"
        width="100%"
        height="100%" />
     <rect
@@ -655,82 +659,82 @@
        width="14.944"
        x="212.09599"
        y="101.766"
-       id="rect170" />
+       id="rect171" />
     <use
        x="212.09599"
        xlink:href="#g3-50"
        y="111.29"
-       id="use172"
+       id="use173"
        width="100%"
        height="100%" />
     <use
        x="217.05901"
        xlink:href="#g3-49"
        y="111.29"
-       id="use174"
+       id="use175"
        width="100%"
        height="100%" />
     <use
        x="222.022"
        xlink:href="#g3-54"
        y="111.29"
-       id="use176"
+       id="use177"
        width="100%"
        height="100%" />
     <use
        x="230.45"
        xlink:href="#g0-0"
        y="104.456"
-       id="use178"
+       id="use179"
        width="100%"
        height="100%" />
     <use
        x="240.383"
        xlink:href="#g0-1"
        y="104.456"
-       id="use180"
+       id="use181"
        width="100%"
        height="100%" />
     <use
        x="244.80099"
        xlink:href="#g0-1"
        y="104.456"
-       id="use182"
+       id="use183"
        width="100%"
        height="100%" />
     <use
        x="249.218"
        xlink:href="#g0-1"
        y="104.456"
-       id="use184"
+       id="use185"
        width="100%"
        height="100%" />
     <use
        x="254.22"
        xlink:href="#g3-43"
        y="104.456"
-       id="use186"
+       id="use187"
        width="100%"
        height="100%" />
     <use
        x="295.953"
        xlink:href="#g1-122"
        y="97.716003"
-       id="use188"
+       id="use189"
        width="100%"
        height="100%" />
     <use
        x="301.00699"
-       xlink:href="#g4-49"
+       xlink:href="#g4-51"
        y="94.100601"
-       id="use190"
+       id="use191"
        width="100%"
        height="100%" />
     <use
        x="304.96399"
-       xlink:href="#g4-54"
+       xlink:href="#g4-50"
        y="94.100601"
-       id="use192"
+       id="use193"
        width="100%"
        height="100%" />
     <rect
@@ -738,166 +742,166 @@
        width="74.720001"
        x="265.349"
        y="101.766"
-       id="rect194" />
+       id="rect195" />
     <use
        x="265.349"
        xlink:href="#g3-54"
        y="111.29"
-       id="use196"
+       id="use197"
        width="100%"
        height="100%" />
     <use
        x="270.31201"
        xlink:href="#g3-57"
        y="111.29"
-       id="use198"
+       id="use199"
        width="100%"
        height="100%" />
     <use
        x="275.27499"
        xlink:href="#g3-48"
        y="111.29"
-       id="use200"
+       id="use201"
        width="100%"
        height="100%" />
     <use
        x="280.23801"
        xlink:href="#g3-52"
        y="111.29"
-       id="use202"
+       id="use203"
        width="100%"
        height="100%" />
     <use
        x="285.20001"
        xlink:href="#g3-53"
        y="111.29"
-       id="use204"
+       id="use205"
        width="100%"
        height="100%" />
     <use
        x="290.16299"
        xlink:href="#g3-50"
        y="111.29"
-       id="use206"
+       id="use207"
        width="100%"
        height="100%" />
     <use
        x="295.12601"
        xlink:href="#g3-48"
        y="111.29"
-       id="use208"
+       id="use209"
        width="100%"
        height="100%" />
     <use
        x="300.08899"
        xlink:href="#g3-54"
        y="111.29"
-       id="use210"
+       id="use211"
        width="100%"
        height="100%" />
     <use
        x="305.05099"
        xlink:href="#g3-54"
        y="111.29"
-       id="use212"
+       id="use213"
        width="100%"
        height="100%" />
     <use
        x="310.01401"
        xlink:href="#g3-51"
        y="111.29"
-       id="use214"
+       id="use215"
        width="100%"
        height="100%" />
     <use
        x="314.97699"
        xlink:href="#g3-48"
        y="111.29"
-       id="use216"
+       id="use217"
        width="100%"
        height="100%" />
     <use
        x="319.939"
        xlink:href="#g3-52"
        y="111.29"
-       id="use218"
+       id="use219"
        width="100%"
        height="100%" />
     <use
        x="324.90201"
        xlink:href="#g3-48"
        y="111.29"
-       id="use220"
+       id="use221"
        width="100%"
        height="100%" />
     <use
        x="329.86499"
        xlink:href="#g3-48"
        y="111.29"
-       id="use222"
+       id="use223"
        width="100%"
        height="100%" />
     <use
        x="334.828"
        xlink:href="#g3-48"
        y="111.29"
-       id="use224"
+       id="use225"
        width="100%"
        height="100%" />
     <use
        x="341.457"
        xlink:href="#g5-19"
        y="90.408302"
-       id="use226"
+       id="use227"
        width="100%"
        height="100%" />
     <use
        x="357.923"
        xlink:href="#g3-40"
        y="104.456"
-       id="use228"
+       id="use229"
        width="100%"
        height="100%" />
     <use
        x="361.78299"
        xlink:href="#g0-106"
        y="104.456"
-       id="use230"
+       id="use231"
        width="100%"
        height="100%" />
     <use
        x="364.54001"
        xlink:href="#g1-122"
        y="104.456"
-       id="use232"
+       id="use233"
        width="100%"
        height="100%" />
     <use
        x="369.59399"
        xlink:href="#g0-106"
        y="104.456"
-       id="use234"
+       id="use235"
        width="100%"
        height="100%" />
     <use
        x="375.11899"
        xlink:href="#g1-60"
        y="104.456"
-       id="use236"
+       id="use237"
        width="100%"
        height="100%" />
     <use
        x="385.60599"
        xlink:href="#g3-49"
        y="104.456"
-       id="use238"
+       id="use239"
        width="100%"
        height="100%" />
     <use
        x="390.56799"
        xlink:href="#g3-41"
        y="104.456"
-       id="use240"
+       id="use241"
        width="100%"
        height="100%" />
   </g>
