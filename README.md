@@ -81,6 +81,7 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 ![erfc convergence bitwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_convergence_bitswise.svg)
 
 ## Double Precision (IEEE 754) Approx
+[C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunction.cs)
 
 The following is used to approximate the error of machine epsilon in the entire domain.
 
@@ -103,6 +104,3 @@ near zero:
 
 larger 27.25:  
 ![erfc tolarge](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_tolarge.svg)
-
-code:  
-[erf approx](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunction.cs)
