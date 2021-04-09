@@ -97,10 +97,13 @@ near zero:
 
 ![erfc az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_az.svg)
 
+A(z) taylor series (z=1.5)  
 ![erfc az 12](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_12.svg)
 
+A(z) taylor series (z=2.5)  
 ![erfc az 23](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_23.svg)
 
+A(z) taylor series (z=3.5)  
 ![erfc az 34](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_34.svg)
 
 4 to 27.25:  
