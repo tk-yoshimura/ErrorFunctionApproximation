@@ -63,6 +63,21 @@ namespace ErrorFunctionApproximation {
                     sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
                 }
             }
+
+            using (StreamWriter sw = new StreamWriter("../../../../results/inverf_approx_nz.csv")) {
+                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
+
+                for (int i = -100; i <= +100; i++) {
+                    double z = 1.220703125e-4 + i / 1000000.0;
+
+                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.InverseErf(z);
+                    double y_approx = ErrorFunction.InverseErf(z);
+                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
+                    double double_err = (double)y_true - y_approx;
+
+                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
+                }
+            }
         }
     }
 }
