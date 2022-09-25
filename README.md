@@ -97,6 +97,8 @@ near zero:
 
 ![erfc az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_az.svg)
 
+![erfc az diff](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_diff.svg)
+
 A(z) taylor series (z0=1.5)  
 ![erfc az 12](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_12.svg)
 
