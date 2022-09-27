@@ -1,83 +1,70 @@
-﻿using System.IO;
-using MultiPrecision;
+﻿using MultiPrecision;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace ErrorFunctionApproximation {
     class Program {
         static void Main(string[] args) {
-            using (StreamWriter sw = new StreamWriter("../../../../results/erf_approx.csv")) {
-                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
+            using StreamWriter sw = new("../../../../results_disused/pade_erfc_n32.txt");
+            sw.WriteLine("pade approximant exp(-x^2)/erfc(x)");
 
-                for (int z1000 = -5 * 1000; z1000 <= 5 * 1000; z1000++) {
-                    double z = z1000 / 1000.0;
+            sw.WriteLine("expected");
+            List<MultiPrecision<Pow2.N32>> expecteds = new();
+            for (MultiPrecision<Pow2.N32> x = 0.5; x <= 27.25; x += 1d / 64) {
+                MultiPrecision<Pow2.N32> y = MultiPrecision<Pow2.N32>.Exp(-x * x) / MultiPrecision<Pow2.N32>.Erfc(x);
 
-                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.Erf(z);
-                    double y_approx = ErrorFunction.Erf(z);
-                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
-                    double double_err = (double)y_true - y_approx;
+                expecteds.Add(y);
 
-                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
+                sw.WriteLine($"{x},{y}");
+            }
+
+            sw.WriteLine("diffs x = 0.5");
+            List<MultiPrecision<Pow2.N32>> diffs = new();
+            for (int d = 0; d <= 128; d++) {
+                MultiPrecision<Pow2.N32> dy = ErfcExpScaled<Pow2.N32>.Diff(d, 0.5) * MultiPrecision<Pow2.N32>.TaylorSequence[d];
+                diffs.Add(dy);
+
+                sw.WriteLine($"{d},{dy}");
+            }
+            sw.Flush();
+
+            sw.WriteLine("pade results");
+            for (int m = 4; m <= 64; m++) {
+                for (int n = m / 2; n <= m * 2 && m + n < 128; n++) {
+                    (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
+                        PadeSolver<Pow2.N32>.Solve(diffs.Take(m + n + 1).ToArray(), m, n);
+
+                    MultiPrecision<Pow2.N32> err = 0;
+                    for ((int i, MultiPrecision<Pow2.N32> x) = (0, 0.5); x <= 27.25; i++, x += 1d / 64) {
+                        MultiPrecision<Pow2.N32> expected = expecteds[i];
+                        MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - 0.5, ms, ns);
+
+                        err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
+                    }
+                    if (err < 1e-15) {
+                        sw.WriteLine($"\nm={m},n={n}");
+                        sw.WriteLine("ms");
+                        for (int i = 0; i < ms.Length; i++) {
+                            sw.WriteLine(ms[i]);
+                        }
+                        sw.WriteLine("ns");
+                        for (int i = 0; i < ns.Length; i++) {
+                            sw.WriteLine(ns[i]);
+                        }
+                        sw.WriteLine("relative err");
+                        sw.WriteLine($"{err:e20}");
+                        sw.Flush();
+                    }
+
+                    Console.WriteLine($"m={m},n={n}");
+                    Console.WriteLine($"{err:e20}");
                 }
             }
 
-            using (StreamWriter sw = new StreamWriter("../../../../results/erfc_approx.csv")) {
-                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
-
-                for (int z1000 = -2 * 1000; z1000 <= 8 * 1000; z1000++) {
-                    double z = z1000 / 1000.0;
-
-                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.Erfc(z);
-                    double y_approx = ErrorFunction.Erfc(z);
-                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
-                    double double_err = (double)y_true - y_approx;
-
-                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
-                }
-            }
-
-            using (StreamWriter sw = new StreamWriter("../../../../results/inverf_approx.csv")) {
-                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
-
-                for (int z10000 = -1 * 10000; z10000 <= 1 * 10000; z10000++) {
-                    double z = z10000 / 10000.0;
-
-                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.InverseErf(z);
-                    double y_approx = ErrorFunction.InverseErf(z);
-                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
-                    double double_err = (double)y_true - y_approx;
-
-                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
-                }
-            }
-
-            using (StreamWriter sw = new StreamWriter("../../../../results/inverfc_approx.csv")) {
-                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
-
-                for (int z10000 = 0 * 10000; z10000 <= 2 * 10000; z10000++) {
-                    double z = z10000 / 10000.0;
-
-                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.InverseErfc(z);
-                    double y_approx = ErrorFunction.InverseErfc(z);
-                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
-                    double double_err = (double)y_true - y_approx;
-
-                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
-                }
-            }
-
-            using (StreamWriter sw = new StreamWriter("../../../../results/inverf_approx_nz.csv")) {
-                sw.WriteLine("z,y_true,y_approx,mp_error,double_error");
-
-                for (int i = -100; i <= +100; i++) {
-                    double z = 1.220703125e-4 + i / 1000000.0;
-
-                    MultiPrecision<Pow2.N4> y_true = MultiPrecision<Pow2.N4>.InverseErf(z);
-                    double y_approx = ErrorFunction.InverseErf(z);
-                    MultiPrecision<Pow2.N4> mp_err = y_true - y_approx;
-                    double double_err = (double)y_true - y_approx;
-
-                    sw.WriteLine($"{z},{y_true},{y_approx},{mp_err},{double_err}");
-                }
-            }
+            Console.WriteLine("END");
+            Console.Read();
         }
     }
 }

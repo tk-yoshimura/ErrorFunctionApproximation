@@ -11,7 +11,7 @@ namespace ErrorFunctionApproximation {
             MultiPrecision<Plus4<N>> s = MultiPrecision<Plus4<N>>.One;
 
             MultiPrecision<N> s_prev = null;
-            
+
             int n = 1;
             while (s_prev != s.Convert<N>()) {
                 s_prev = s.Convert<N>();
