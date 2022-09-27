@@ -81,6 +81,8 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 ![erfc convergence bitwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_convergence_bitswise.svg)
 
 ## Double Precision (IEEE 754) Approx
+### Taylor Series
+
 [C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunction.cs)  
 [erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erf_approx.csv)  
 [erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erfc_approx.csv)  
@@ -113,3 +115,8 @@ A(z) taylor series (z0=3.5)
 
 larger 27.25:  
 ![erfc tolarge](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_tolarge.svg)
+
+### Pade Approximant
+![pade definition](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/pade_definition.svg)  
+[pade erfc precision16](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erfc_e16.txt)  
+[pade erfc precision32](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erfc_e32.txt)  

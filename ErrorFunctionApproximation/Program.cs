@@ -7,59 +7,77 @@ using System.Linq;
 namespace ErrorFunctionApproximation {
     class Program {
         static void Main(string[] args) {
-            using StreamWriter sw = new("../../../../results_disused/pade_erfc_n32.txt");
+            MultiPrecision<Pow2.N32>[] xs = new MultiPrecision<Pow2.N32>[]{
+                0.5, 1, 2, 4, 8, 16, 27.25
+            };
+
+            MultiPrecision<Pow2.N32> dx = 1d / 1024;
+
+            using StreamWriter sw = new("../../../../results/pade_erfc_e32.txt");
             sw.WriteLine("pade approximant exp(-x^2)/erfc(x)");
 
-            sw.WriteLine("expected");
-            List<MultiPrecision<Pow2.N32>> expecteds = new();
-            for (MultiPrecision<Pow2.N32> x = 0.5; x <= 27.25; x += 1d / 64) {
-                MultiPrecision<Pow2.N32> y = MultiPrecision<Pow2.N32>.Exp(-x * x) / MultiPrecision<Pow2.N32>.Erfc(x);
+            for (int j = 0; j < xs.Length - 1; j++) {
+                MultiPrecision<Pow2.N32> x0 = xs[j], x1 = xs[j + 1];
 
-                expecteds.Add(y);
+                sw.WriteLine($"\nrange x in [{x0}, {x1}]");
 
-                sw.WriteLine($"{x},{y}");
-            }
+                sw.WriteLine("expected");
+                List<MultiPrecision<Pow2.N32>> expecteds = new();
+                for (MultiPrecision<Pow2.N32> x = x0; x <= x1; x += dx) {
+                    MultiPrecision<Pow2.N32> y = MultiPrecision<Pow2.N32>.Exp(-x * x) / MultiPrecision<Pow2.N32>.Erfc(x);
+                
+                    expecteds.Add(y);
+                
+                    //sw.WriteLine($"{x},{y:e40}");
+                }
+                
+                sw.WriteLine($"diffs x = {x0}");
+                List<MultiPrecision<Pow2.N32>> diffs = new();
+                for (int d = 0; d <= 128; d++) {
+                    MultiPrecision<Pow2.N32> dy = ErfcExpScaled<Pow2.N32>.Diff(d, x0) * MultiPrecision<Pow2.N32>.TaylorSequence[d];
+                    diffs.Add(dy);
+                
+                    //sw.WriteLine($"{d},{dy:e40}");
+                }
+                sw.Flush();
 
-            sw.WriteLine("diffs x = 0.5");
-            List<MultiPrecision<Pow2.N32>> diffs = new();
-            for (int d = 0; d <= 128; d++) {
-                MultiPrecision<Pow2.N32> dy = ErfcExpScaled<Pow2.N32>.Diff(d, 0.5) * MultiPrecision<Pow2.N32>.TaylorSequence[d];
-                diffs.Add(dy);
+                sw.WriteLine("pade results");
+                bool is_finished = false;
 
-                sw.WriteLine($"{d},{dy}");
-            }
-            sw.Flush();
+                for (int m = 4; m <= 64 && !is_finished; m++) {
+                    for (int n = m - 1; n <= m + 1 && m + n < 128 && !is_finished; n++) {
+                        (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
+                            PadeSolver<Pow2.N32>.Solve(diffs.Take(m + n + 1).ToArray(), m, n);
 
-            sw.WriteLine("pade results");
-            for (int m = 4; m <= 64; m++) {
-                for (int n = m / 2; n <= m * 2 && m + n < 128; n++) {
-                    (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
-                        PadeSolver<Pow2.N32>.Solve(diffs.Take(m + n + 1).ToArray(), m, n);
+                        MultiPrecision<Pow2.N32> err = 0;
+                        for ((int i, MultiPrecision<Pow2.N32> x) = (0, x0); i < expecteds.Count; i++, x += dx) {
+                            MultiPrecision<Pow2.N32> expected = expecteds[i];
+                            MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - x0, ms, ns);
 
-                    MultiPrecision<Pow2.N32> err = 0;
-                    for ((int i, MultiPrecision<Pow2.N32> x) = (0, 0.5); x <= 27.25; i++, x += 1d / 64) {
-                        MultiPrecision<Pow2.N32> expected = expecteds[i];
-                        MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - 0.5, ms, ns);
-
-                        err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
-                    }
-                    if (err < 1e-15) {
-                        sw.WriteLine($"\nm={m},n={n}");
-                        sw.WriteLine("ms");
-                        for (int i = 0; i < ms.Length; i++) {
-                            sw.WriteLine(ms[i]);
+                            err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
                         }
-                        sw.WriteLine("ns");
-                        for (int i = 0; i < ns.Length; i++) {
-                            sw.WriteLine(ns[i]);
-                        }
-                        sw.WriteLine("relative err");
-                        sw.WriteLine($"{err:e20}");
-                        sw.Flush();
-                    }
 
-                    Console.WriteLine($"m={m},n={n}");
-                    Console.WriteLine($"{err:e20}");
+                        Console.WriteLine($"m={m},n={n}");
+                        Console.WriteLine($"{err:e20}");
+
+                        if (err < 1e-32 && ms.All((v) => v > 0) && ns.All((v) => v > 0)) {
+                            sw.WriteLine($"m={m},n={n}");
+                            sw.WriteLine("ms");
+                            for (int i = 0; i < ms.Length; i++) {
+                                sw.WriteLine($"{ms[i]:e40}");
+                            }
+                            sw.WriteLine("ns");
+                            for (int i = 0; i < ns.Length; i++) {
+                                sw.WriteLine($"{ns[i]:e40}");
+                            }
+                            sw.WriteLine("relative err");
+                            sw.WriteLine($"{err:e20}");
+                            sw.Flush();
+
+                            is_finished = true;
+                            break;
+                        }
+                    }
                 }
             }
 
