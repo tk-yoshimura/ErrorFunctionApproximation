@@ -118,5 +118,9 @@ larger 27.25:
 
 ### Pade Approximant
 ![pade definition](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/pade_definition.svg)  
+[C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunctionMarkII.cs)  
+
 [pade erfc precision16](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erfc_e16.txt)  
 [pade erfc precision32](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erfc_e32.txt)  
+[pade erf precision16](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erf_e16.txt)  
+[pade erf precision32](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erf_e32.txt)  
