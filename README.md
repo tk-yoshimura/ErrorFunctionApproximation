@@ -2,11 +2,11 @@
 
 ## Definition
 
-The error function is defined by the following equation:
+The error function (erf) is defined by the following equation:
 
 ![erf](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf.svg)
 
-The complementary error function is defined by the following equation:
+The complementary error function (erfc) is defined by the following equation:
 
 ![erfc](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc.svg)
 
