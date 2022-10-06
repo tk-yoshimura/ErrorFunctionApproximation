@@ -1,9 +1,6 @@
 pade approximant f(x^2) f(x):=erf(x)/x
 
 range x in [0, 0.5]
-expected
-diffs x = 0
-pade results
 m=4,n=5
 ms
 1.12837916709551257390e0
