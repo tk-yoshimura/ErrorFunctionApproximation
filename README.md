@@ -84,13 +84,13 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 [C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionFP64/ErrorFunction.cs)  
 
 [erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erf_approx.csv)  
-[erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_approx.svg)  
+![erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_approx.svg)  
 [erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erfc_approx.csv)  
-[erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx.svg)  
+![erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx.svg)  
 [inverse erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverf_approx.csv)  
-[inverse erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/inverf_approx.svg)  
+![inverse erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/inverf_approx.svg)  
 [inverse erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverfc_approx.csv)  
-[inverse erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/inverfc_approx.svg)  
+![inverse erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/inverfc_approx.svg)  
 
 The following is used to approximate the error of machine epsilon in the entire domain.
 
