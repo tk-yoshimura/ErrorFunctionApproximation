@@ -81,13 +81,7 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 ![erfc convergence bitwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_convergence_bitswise.svg)
 
 ## Double Precision (IEEE 754) Approx
-### Taylor Series
-
-[C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunction.cs)  
-[erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erf_approx.csv)  
-[erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erfc_approx.csv)  
-[inverse erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverf_approx.csv)  
-[inverse erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverfc_approx.csv)  
+[C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionFP64/ErrorFunction.cs)  
 
 The following is used to approximate the error of machine epsilon in the entire domain.
 
@@ -101,24 +95,7 @@ near zero:
 
 ![erfc az diff](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_diff.svg)
 
-A(z) taylor series (z0=1.5)  
-![erfc az 12](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_12.svg)
-
-A(z) taylor series (z0=2.5)  
-![erfc az 23](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_23.svg)
-
-A(z) taylor series (z0=3.5)  
-![erfc az 34](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az_34.svg)
-
-4 to 27.25:  
-![erfc x20](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_x20.svg)
-
-larger 27.25:  
-![erfc tolarge](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_tolarge.svg)
-
-### Pade Approximant Base
 ![pade definition](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/pade_definition.svg)  
-[C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionApproximation/ErrorFunctionMarkII.cs)  
 
 [pade erf precision16](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erf_e16.txt)  
 [pade erf precision32](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_erf_e32.txt)  
