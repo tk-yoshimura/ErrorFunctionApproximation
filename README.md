@@ -1,6 +1,6 @@
 # ErrorFunctionApproximation
 
-[Download DLL](https://github.com/tk-yoshimura/ErrorFunctionFP64/releases)  
+[Download DLL](https://github.com/tk-yoshimura/ErrorFunctionApproximation/releases)  
 [Download Nuget](https://www.nuget.org/packages/tyoshimura.ErrorFunctionFP64/)  
 
 ## Definition
