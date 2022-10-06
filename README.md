@@ -1,5 +1,8 @@
 # ErrorFunctionApproximation
 
+[Download DLL](https://github.com/tk-yoshimura/ErrorFunctionFP64/releases)  
+[Download Nuget](https://www.nuget.org/packages/tyoshimura.ErrorFunctionFP64/)  
+
 ## Definition
 
 The error function (erf) is defined by the following equation:
