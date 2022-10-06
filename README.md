@@ -81,6 +81,7 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 ![erfc convergence bitwise](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_convergence_bitswise.svg)
 
 ## Double Precision (IEEE 754) Approx
+The calculation error is at most 2 epsilons.  
 [C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionFP64/ErrorFunction.cs)  
 
 [erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erf_approx.csv)  
