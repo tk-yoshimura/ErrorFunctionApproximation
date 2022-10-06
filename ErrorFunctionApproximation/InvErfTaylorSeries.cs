@@ -19,7 +19,7 @@ namespace ErrorFunctionApproximation {
                 for (int m = 0; m < k; m++) {
                     coef += coefs[m] * coefs[k - m - 1] / ((m + 1) * (2 * m + 1));
                 }
-                
+
                 coefs.Add(coef);
             }
 

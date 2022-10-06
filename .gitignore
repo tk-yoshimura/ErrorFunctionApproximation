@@ -24,6 +24,10 @@
 *.nupkg
 *.snupkg
 /**/[Pp]ackages/*
+nuget.exe
+nugetpack.bat
+/**/*.nuspec
+/**/*.nupkg
 
 # Build results
 /**/[Bb]in/
