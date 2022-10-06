@@ -2,11 +2,11 @@
 
 ## Definition
 
-The error function is defined by the following equation:
+The error function (erf) is defined by the following equation:
 
 ![erf](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf.svg)
 
-The complementary error function is defined by the following equation:
+The complementary error function (erfc) is defined by the following equation:
 
 ![erfc](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc.svg)
 
@@ -82,6 +82,10 @@ Let N be the recursion times (Fn+4(z) to Fn(z)), and N until convergence is as f
 
 ## Double Precision (IEEE 754) Approx
 [C# code](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/ErrorFunctionFP64/ErrorFunction.cs)  
+[erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erf_approx.csv)  
+[erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/erfc_approx.csv)  
+[inverse erf result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverf_approx.csv)  
+[inverse erfc result](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/inverfc_approx.csv)  
 
 The following is used to approximate the error of machine epsilon in the entire domain.
 
