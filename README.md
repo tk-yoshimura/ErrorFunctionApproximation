@@ -127,8 +127,14 @@ larger 27.25:
 
 ## Inverse Function
 
-### Erfc NearZero
+### InverseErfc NearZero
 ![inverse erfc nearzero](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/inverse_erfc_nz.svg)  
 
 [pade inverfc precision16](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_inverfc_e16.txt)  
 [pade inverfc precision32](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/pade_inverfc_e32.txt)  
+
+### InverseErf NearZero
+
+[series inverf e20](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/series_inverf_e20.txt)  
+[series inverf e40](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/series_inverf_e40.txt)  
+[series inverf e80](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/results/series_inverf_e80.txt)  

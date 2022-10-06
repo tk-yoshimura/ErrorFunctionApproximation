@@ -7,101 +7,74 @@ using System.Linq;
 namespace ErrorFunctionApproximation {
     class Program {
         static void Main(string[] args) {
-            MultiPrecision<Pow2.N32>[] xs = new MultiPrecision<Pow2.N32>[]{
-                1, 2, 4, 8, 16, 32
-            };
+            MultiPrecision<Pow2.N32> dx = 1d / 1024;
 
-            static MultiPrecision<Pow2.N32> f32(MultiPrecision<Pow2.N32> x) {
-                return MultiPrecision<Pow2.N32>.InverseErfc(MultiPrecision<Pow2.N32>.Pow2(-x * x));
-            };
+            using StreamWriter sw = new("../../../../results/series_inverf_e20.txt");
+            sw.WriteLine("pade approximant f(x^2) f(x):=inverf(x)/x");
 
-            static MultiPrecision<Pow2.N64> f64(MultiPrecision<Pow2.N64> x) {
-                return MultiPrecision<Pow2.N64>.InverseErfc(MultiPrecision<Pow2.N64>.Pow2(-x * x));
-            };
+            MultiPrecision<Pow2.N32> x0 = 0, x1 = 0.5;
 
-            using StreamWriter sw = new("../../../../results/pade_inverfc_e16.txt");
-            sw.WriteLine("pade approximant inverse_erfc(2^(-x^2))");
+            sw.WriteLine($"\nrange x in [{x0}, {x1}]");
 
-            for (int j = 0; j < xs.Length - 1; j++) {
-                MultiPrecision<Pow2.N32> x0 = xs[j], x1 = xs[j + 1];
-                MultiPrecision<Pow2.N32> dx = (x1 - x0) / 2048;
+            MultiPrecision<Pow2.N32> c = MultiPrecision<Pow2.N32>.Sqrt(MultiPrecision<Pow2.N32>.PI) / 2;
 
-                sw.WriteLine($"\nrange x in [{x0}, {x1}]");
-
-                //sw.WriteLine("expected");
-                List<MultiPrecision<Pow2.N32>> expecteds = new();
-                for (MultiPrecision<Pow2.N32> x = x0; x <= x1; x += dx) {
-                    MultiPrecision<Pow2.N32> y = f32(x);
+            sw.WriteLine("expected");
+            List<MultiPrecision<Pow2.N32>> expecteds = new();
+            for (MultiPrecision<Pow2.N32> x = x0; x <= x1; x += dx) {
+                MultiPrecision<Pow2.N32> y = (x > 0) ? MultiPrecision<Pow2.N32>.InverseErf(x) / x : c;
                 
-                    expecteds.Add(y);
-
-                    if ((x % 0.125) == 0) {
-                        Console.Write(".");
-                    }
+                expecteds.Add(y);
                 
-                    //sw.WriteLine($"{x},{y:e40}");
-                }
-
-                Console.Write("\n");
-                
-                sw.WriteLine($"diffs x = {x0}");
-                MultiPrecision<Pow2.N64>[] diffs = FiniteDifference<Pow2.N64>.Diff(x0.Convert<Pow2.N64>(), f64, Math.ScaleB(1, -20));
-                for (int i = 0; i < diffs.Length; i++) {
-                    sw.WriteLine($"{i},{diffs[i]:e40}");
-                }
-                sw.Flush();
-
-                MultiPrecision<Pow2.N32>[] cs = new MultiPrecision<Pow2.N32>[diffs.Length + 1];
-                cs[0] = f32(x0);
-                for (int i = 0; i < diffs.Length; i++) {
-                    cs[i + 1] = diffs[i].Convert<Pow2.N32>() * MultiPrecision<Pow2.N32>.TaylorSequence[i + 1];
-                }
-
-                sw.WriteLine("pade results");
-                bool is_finished = false;
-
-                for (int m = 4; m < diffs.Length && !is_finished; m++) {
-                    for (int n = m - 1; n <= m + 1 && m + n < diffs.Length; n++) {
-                        (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
-                            PadeSolver<Pow2.N32>.Solve(cs.Take(m + n + 1).ToArray(), m, n);
-
-                        MultiPrecision<Pow2.N32> err = 0;
-                        for ((int i, MultiPrecision<Pow2.N32> x) = (0, x0); i < expecteds.Count; i++, x += dx) {
-                            MultiPrecision<Pow2.N32> expected = expecteds[i];
-                            MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - x0, ms, ns);
-
-                            err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
-                        }
-
-                        Console.WriteLine($"m={m},n={n}");
-                        Console.WriteLine($"{err:e20}");
-
-                        if (err < 1e-16) {
-                            sw.WriteLine($"m={m},n={n}");
-                            sw.WriteLine("ms");
-                            for (int i = 0; i < ms.Length; i++) {
-                                sw.WriteLine($"{ms[i]:e20}");
-                            }
-                            sw.WriteLine("ns");
-                            for (int i = 0; i < ns.Length; i++) {
-                                sw.WriteLine($"{ns[i]:e20}");
-                            }
-                            sw.WriteLine("relative err");
-                            sw.WriteLine($"{err:e20}");
-                            sw.Flush();
-
-                            if (ms.All((v) => v > 0) && ns.All((v) => v > 0)) {
-                                is_finished = true;
-                            }
-                        }
-                    }
-                }
-
-                if (!is_finished) {
-                    Console.WriteLine("not convergence");
-                }
+                //sw.WriteLine($"{x},{y:e40}");
             }
+                
+            sw.WriteLine($"series x = {x0}");
+            List<MultiPrecision<Pow2.N32>> diffs = new();
+            for (int d = 0; d <= 64; d++) {
+                MultiPrecision<Pow2.N32> dy = InvErfTaylorSeries.Coef<Pow2.N32>(d);
+                diffs.Add(dy);
+                
+                sw.WriteLine($"{d},{dy:e20}");
+            }
+            sw.Flush();
 
+            //sw.WriteLine("pade results");
+            //bool is_finished = false;
+            //
+            //for (int m = 4; m <= 64 && !is_finished; m++) {
+            //    for (int n = m - 1; n <= m + 1 && m + n < 128; n++) {
+            //        (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
+            //            PadeSolver<Pow2.N32>.Solve(diffs.Take(m + n + 1).ToArray(), m, n);
+            //
+            //        MultiPrecision<Pow2.N32> err = 0;
+            //        for ((int i, MultiPrecision<Pow2.N32> x) = (0, x0); i < expecteds.Count; i++, x += dx) {
+            //            MultiPrecision<Pow2.N32> expected = expecteds[i];
+            //            MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(MultiPrecision<Pow2.N32>.Square(x - x0), ms, ns);
+            //
+            //            err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
+            //        }
+            //
+            //        Console.WriteLine($"m={m},n={n}");
+            //        Console.WriteLine($"{err:e20}");
+            //
+            //        if (err < 1e-32) {
+            //            sw.WriteLine($"m={m},n={n}");
+            //            sw.WriteLine("ms");
+            //            for (int i = 0; i < ms.Length; i++) {
+            //                sw.WriteLine($"{(ms[i] * c):e40}");
+            //            }
+            //            sw.WriteLine("ns");
+            //            for (int i = 0; i < ns.Length; i++) {
+            //                sw.WriteLine($"{ns[i]:e40}");
+            //            }
+            //            sw.WriteLine("relative err");
+            //            sw.WriteLine($"{err:e20}");
+            //            sw.Flush();
+            //            
+            //            is_finished = true;
+            //        }
+            //    }
+            //}
 
             Console.WriteLine("END");
             Console.Read();
