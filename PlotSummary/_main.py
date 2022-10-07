@@ -15,7 +15,14 @@ targets = [
     'inverfc_approx',
 ]
 
-for target in targets:
+options = [
+    [],
+    [],
+    [],
+    ['logx']
+]
+
+for target, option in zip(targets, options):
     data = pd.read_csv(dirpath_summary + target + suffix_summary) 
 
     x, y, err = data['x'], data['y_actual'], data['error(rate)']
@@ -34,5 +41,9 @@ for target in targets:
     ax2.plot(x, err)
     ax2.grid()
     ax2.set_ylabel('error(rate)')
+
+    if 'logx' in option:
+        ax1.set_xscale('log')
+        ax2.set_xscale('log')
 
     plt.savefig(dirpath_figure + target + suffix_figure, bbox_inches='tight')
