@@ -101,7 +101,7 @@ The following is used to approximate the error of machine epsilon in the entire 
 near zero:  
 ![erf approx nearzero](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erf_approx_nz.svg)
 
-1 to 4:  
+greater than 1/2:  
 ![erfc approx az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_approx_az.svg)
 
 ![erfc az](https://github.com/tk-yoshimura/ErrorFunctionApproximation/blob/main/figures/erfc_az.svg)
