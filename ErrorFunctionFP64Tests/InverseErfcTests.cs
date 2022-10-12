@@ -60,9 +60,9 @@ namespace ErrorFunctionFP64Tests {
             Assert.IsTrue(double.IsFinite(ErrorFunction.InverseErfc(Math.BitIncrement(0))), "x = 0+eps");
             Assert.IsTrue(double.IsFinite(ErrorFunction.InverseErfc(Math.BitDecrement(2))), "x = 2-eps");
 
-            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErf(double.PositiveInfinity)), "x = +inf");
-            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErf(double.NegativeInfinity)), "x = -inf");
-            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErf(double.NaN)), "x = nan");
+            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErfc(double.PositiveInfinity)), "x = +inf");
+            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErfc(double.NegativeInfinity)), "x = -inf");
+            Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErfc(double.NaN)), "x = nan");
         }
 
         [TestMethod()]
