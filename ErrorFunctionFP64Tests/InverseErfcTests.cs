@@ -64,5 +64,13 @@ namespace ErrorFunctionFP64Tests {
             Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErf(double.NegativeInfinity)), "x = -inf");
             Assert.IsTrue(double.IsNaN(ErrorFunction.InverseErf(double.NaN)), "x = nan");
         }
+
+        [TestMethod()]
+        public void InverseErfcValuePlotTest() {
+            Console.WriteLine(ErrorFunction.InverseErfc(1d / 10));
+            Console.WriteLine(ErrorFunction.InverseErfc(1d / 100));
+            Console.WriteLine(ErrorFunction.InverseErfc(1d / 1000));
+            Console.WriteLine(ErrorFunction.InverseErfc(1d / 10000));
+        }
     }
 }

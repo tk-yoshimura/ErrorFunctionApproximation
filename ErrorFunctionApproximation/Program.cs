@@ -11,13 +11,12 @@ namespace ErrorFunctionApproximation {
                 0.5, 1, 2, 4, 8, 16, 27.25
             };
 
-            MultiPrecision<Pow2.N32> dx = 1d / 8192;
-
-            using StreamWriter sw = new("../../../../results_disused/pade_erfc_e16.txt");
-            sw.WriteLine("pade approximant exp(-x^2)/erfc(x)");
+            using StreamWriter sw = new("../../../../results_disused/pade_erfc_e32_hex.txt");
+            sw.WriteLine("pade approximant erfc(x)/exp(-x^2)");
 
             for (int j = 0; j < xs.Length - 1; j++) {
                 MultiPrecision<Pow2.N32> x0 = xs[j], x1 = xs[j + 1];
+                MultiPrecision<Pow2.N32> dx = (x1 - x0) / 8192;
 
                 sw.WriteLine($"\nrange x in [{x0}, {x1}]");
 
@@ -42,47 +41,48 @@ namespace ErrorFunctionApproximation {
                 sw.Flush();
 
                 sw.WriteLine("pade results");
-                bool is_finished = false;
+                
+                for (int m = 10; m <= 32; m++) {
+                    (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
+                        PadeSolver<Pow2.N32>.Solve(diffs.Take(m + m + 1).ToArray(), m, m);
 
-                for (int m = 4; m <= 64 && !is_finished; m++) {
-                    for (int n = m - 1; n <= m + 1 && m + n < 128 && !is_finished; n++) {
-                        (MultiPrecision<Pow2.N32>[] ms, MultiPrecision<Pow2.N32>[] ns) =
-                            PadeSolver<Pow2.N32>.Solve(diffs.Take(m + n + 1).ToArray(), m, n);
+                    MultiPrecision<Pow2.N32> err = 0;
+                    for ((int i, MultiPrecision<Pow2.N32> x) = (0, x0); i < expecteds.Count; i++, x += dx) {
+                        MultiPrecision<Pow2.N32> expected = expecteds[i];
+                        MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - x0, ms, ns);
 
-                        MultiPrecision<Pow2.N32> err = 0;
-                        for ((int i, MultiPrecision<Pow2.N32> x) = (0, x0); i < expecteds.Count; i++, x += dx) {
-                            MultiPrecision<Pow2.N32> expected = expecteds[i];
-                            MultiPrecision<Pow2.N32> actual = PadeSolver<Pow2.N32>.Approx(x - x0, ms, ns);
+                        err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
+                    }
 
-                            err = MultiPrecision<Pow2.N32>.Max(err, MultiPrecision<Pow2.N32>.Abs(expected / actual - 1));
+                    Console.WriteLine($"m={m},n={m}");
+                    Console.WriteLine($"{err:e20}");
+
+                    if (err < 4e-32) {
+                        sw.WriteLine($"m={m},n={m}");
+                        for (int i = 0; i <= m; i++) {
+                            sw.WriteLine($"({ToFP128(ns[i])}, {ToFP128(ms[i])}), ");
                         }
+                        sw.WriteLine("relative err");
+                        sw.WriteLine($"{err:e20}");
+                        sw.Flush();
 
-                        Console.WriteLine($"m={m},n={n}");
-                        Console.WriteLine($"{err:e20}");
-
-                        if (err < 1e-17 && ms.All((v) => v > 0) && ns.All((v) => v > 0)) {
-                            sw.WriteLine($"m={m},n={n}");
-                            sw.WriteLine("ms");
-                            for (int i = 0; i < ms.Length; i++) {
-                                sw.WriteLine($"{ms[i]:e20}");
-                            }
-                            sw.WriteLine("ns");
-                            for (int i = 0; i < ns.Length; i++) {
-                                sw.WriteLine($"{ns[i]:e20}");
-                            }
-                            sw.WriteLine("relative err");
-                            sw.WriteLine($"{err:e20}");
-                            sw.Flush();
-
-                            is_finished = true;
-                            break;
-                        }
+                        break;
                     }
                 }
             }
 
             Console.WriteLine("END");
             Console.Read();
+        }
+
+        public static string ToFP128(MultiPrecision<Pow2.N32> x) { 
+            Sign sign = x.Sign;
+            long exponent = x.Exponent;
+            uint[] mantissa = x.Mantissa.Reverse().ToArray();
+            
+            string code = $"({(sign == Sign.Plus ? "+1" : "-1")}, {exponent}, 0x{mantissa[0]:X8}{mantissa[1]:X8}uL, 0x{mantissa[2]:X8}{mantissa[3]:X8}uL)";
+
+            return code;
         }
     }
 }
